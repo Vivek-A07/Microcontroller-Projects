@@ -1,37 +1,33 @@
-# STM32 Microcontroller Projects
+# 🔌 STM32 Microcontroller Projects
 
-Welcome to my Microcontroller Projects repository! This repository contains microcontroller-based projects developed during my Embedded Systems training and hands-on practice.
+A collection of STM32-based embedded projects demonstrating
+peripheral configuration, Embedded C programming, hardware
+interfacing, and control logic.
 
-These projects focus on programming STM32 microcontrollers and understanding fundamental embedded systems concepts such as GPIO, timers, PWM, interrupts, ADC, input handling, and hardware interfacing.
+## 🛠️ Technologies
 
-## About Me
+- Embedded C
+- STM32
+- STM32CubeIDE
+- STM32 HAL
+- GPIO
+- Timers
+- PWM
+- ADC
 
-- Mechatronics Engineering graduate
-- Currently undergoing Embedded Systems training at Emertxe, Bangalore
-- Interested in Embedded Systems, Firmware Development, and Microcontroller Programming
-- Currently strengthening my skills in Embedded C, STM32, peripheral configuration, and debugging
-
-## Technologies & Tools
-
-- **Programming Language:** Embedded C
-- **Microcontroller:** STM32
-- **IDE:** STM32CubeIDE
-- **Libraries:** STM32 HAL
-- **Tools:** Git, GitHub, PICSimLab (where applicable)
-
-## Microcontroller Projects
+## 🚀 Projects
 
 | Project | Description | Concepts |
 |---|---|---|
-| [Binary Counter Display](./Binary-Counter-Display/) | Displays a binary count using four LEDs | GPIO, binary representation, input handling |
-| [Multi-Mode LED Controller](./Multi-Mode-LED-Controller/) | Controls an LED through multiple operating modes | GPIO, state machine, timing, button handling |
-| [PWM LED Brightness Control](./PWM-LED-Brightness-Control/) | Controls LED brightness using PWM | PWM, timers, duty cycle |
-| [Temperature Monitoring System](./Temperature-Monitoring-System/) | Reads temperature sensor data and indicates temperature ranges using LEDs | ADC, sensor interfacing, data conversion, GPIO |
-| [User Inactivity Detector](./User-Inactivity-Detector/) | Detects user inactivity based on input events and timing | GPIO, timers, button handling, time tracking |
+| 🔢 Binary Counter Display | Displays a binary count using four LEDs | GPIO, binary representation |
+| 💡 Multi-Mode LED Controller | Controls an LED through multiple operating modes | GPIO, state machine, timing |
+| 🎚️ PWM LED Brightness Control | Controls LED brightness using PWM | PWM, timers, duty cycle |
+| 🌡️ Temperature Monitoring System | Monitors temperature and indicates ranges using LEDs | ADC, sensor interfacing |
+| ⏱️ User Inactivity Detector | Detects inactivity through input and timing logic | GPIO, timers, event detection |
 
-## Repository Structure
+## 📂 Repository Structure
 
-```text
+\`\`\`
 Microcontroller-Projects/
 ├── Binary-Counter-Display/
 ├── Multi-Mode-LED-Controller/
@@ -39,18 +35,20 @@ Microcontroller-Projects/
 ├── Temperature-Monitoring-System/
 ├── User-Inactivity-Detector/
 └── README.md
-```
+\`\`\`
 
-## Learning Objectives
+## 🎯 Focus Areas
 
-- Develop practical Embedded C programming skills
-- Understand STM32 GPIO configuration and control
-- Work with timers and PWM
-- Interface with sensors using ADC
-- Implement state-based control logic
-- Practice debugging and testing embedded applications
-- Build a practical portfolio of microcontroller projects
+- Embedded C programming
+- STM32 peripheral configuration
+- GPIO
+- ADC
+- PWM
+- Timers
+- State machines
+- Sensor interfacing
+- Embedded application development
 
 ---
 
-*This repository is continuously updated as I develop new embedded systems projects and improve my technical skills.*
+More embedded projects and improvements will be added over time.
