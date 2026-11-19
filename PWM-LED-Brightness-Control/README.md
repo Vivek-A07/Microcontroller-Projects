@@ -104,42 +104,26 @@ Software debouncing is implemented to prevent unwanted multiple brightness incre
 
 The following waveform captures demonstrate PWM output behavior at different brightness levels.
 
-**PWM Output 1**
-
-![PWM Output 1](images/pwm-output-1.png)
-
-**PWM Output 2**
-
-![PWM Output 2](images/pwm-output-2.png)
-
-**PWM Output 3**
-
-![PWM Output 3](images/pwm-output-3.png)
-
-**PWM Output 4**
-
-![PWM Output 4](images/pwm-output-4.png)
-
-**PWM Output 5**
-
-![PWM Output 5](images/pwm-output-5.png)
-
-**PWM Output 6**
-
-![PWM Output 6](images/pwm-output-6.png)
-
+### PWM Output Waveforms
 
 <p align="center">
-  <img src="images/pwm-output-1.png" width="45%" alt="Mode 0 LED OFF">
-  <img src="images/pwm-output-1.png" width="45%" alt="Mode 1 LED ON">
+  <img src="images/pwm-output-1.png" width="45%" alt="PWM Output 1">
+  <img src="images/pwm-output-2.png" width="45%" alt="PWM Output 2">
 </p>
+
+<br>
 
 <p align="center">
-  <img src="images/pwm-output-1.png" width="45%" alt="Mode 2 Slow Blink">
-  <img src="images/pwm-output-1.png" width="45%" alt="Mode 3 Fast Blink">
+  <img src="images/pwm-output-3.png" width="45%" alt="PWM Output 3">
+  <img src="images/pwm-output-4.png" width="45%" alt="PWM Output 4">
 </p>
 
-pwm-output-1.png
+<br>
+
+<p align="center">
+  <img src="images/pwm-output-5.png" width="45%" alt="PWM Output 5">
+  <img src="images/pwm-output-6.png" width="45%" alt="PWM Output 6">
+</p>
 
 ## Concepts Demonstrated
 
