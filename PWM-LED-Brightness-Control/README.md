@@ -131,28 +131,40 @@ The Capture/Compare Register (CCR) is updated according to the selected brightne
 
 ## Images & Simulation Results
 
+## Images & Simulation Results
+
 ### STM32 Blue Pill Pin Configuration
 
+![STM32 Blue Pill Pin Configuration](images/pin-configuration.png)
 
+---
 
 ### PWM Output Waveforms
 
-The following oscilloscope captures demonstrate PWM output at different LED brightness levels.
+<p align="center">
+  <b>10% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>20% Brightness</b><br>
+  <img src="images/pwm-output-1.png" width="45%">
+  <img src="images/pwm-output-2.png" width="45%">
+</p>
 
-\<p align="center">   \<b>0% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   \<b>20% Brightness\</b>\<br>   \<img src="images/pwm-output-1.png" width="45%" alt="0% Brightness PWM">   \<img src="images/pwm-output-2.png" width="45%" alt="20% Brightness PWM"> \</p>
+<br>
 
-\<br>
+<p align="center">
+  <b>30% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>40% Brightness</b><br>
+  <img src="images/pwm-output-3.png" width="45%">
+  <img src="images/pwm-output-4.png" width="45%">
+</p>
 
-\<p align="center">   \<b>40% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   \<b>60% Brightness\</b>\<br>   \<img src="images/pwm-output-3.png" width="45%" alt="40% Brightness PWM">   \<img src="images/pwm-output-4.png" width="45%" alt="60% Brightness PWM"> \</p>
+<br>
 
-\<br>
-
-\<p align="center">
-&#x20; \<b>80% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&#x20; \<b>100% Brightness\</b>\<br>
-&#x20; \<img src="images/pwm-output-5.png" width="45%" alt="80% Brightness PWM">
-&#x20; \<img src="images/pwm-output-6.png" width="45%" alt="100% Brightness PWM">
-\</p>
+<p align="center">
+  <b>50% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>60% Brightness</b><br>
+  <img src="images/pwm-output-5.png" width="45%">
+  <img src="images/pwm-output-6.png" width="45%">
+</p>
 
 ## Concepts Demonstrated
 
