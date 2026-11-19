@@ -92,9 +92,11 @@ Software debouncing is implemented to prevent unwanted multiple brightness incre
 
 ## Images & Simulation Results
 
+## Images & Simulation Results
+
 ### STM32 Blue Pill Pin Configuration
 
-\<p align="center">   \<img src="images/pin-configuration.png" width="700" alt="STM32 Blue Pill PWM Pin Configuration"> \</p>
+![STM32 Blue Pill Pin Configuration](images/pin-configuration.png)
 
 ---
 
@@ -104,30 +106,27 @@ The following waveform captures demonstrate PWM output behavior at different bri
 
 **PWM Output 1**
 
-\<p align="center">   \<img src="images/pwm-output-1.png" width="85%" alt="PWM Output Waveform 1"> \</p>
+![PWM Output 1](images/pwm-output-1.png)
 
 **PWM Output 2**
 
-\<p align="center">   \<img src="images/pwm-output-2.png" width="85%" alt="PWM Output Waveform 2"> \</p>
+![PWM Output 2](images/pwm-output-2.png)
 
 **PWM Output 3**
 
-\<p align="center">   \<img src="images/pwm-output-3.png" width="85%" alt="PWM Output Waveform 3"> \</p>
+![PWM Output 3](images/pwm-output-3.png)
 
 **PWM Output 4**
 
-\<p align="center">   \<img src="images/pwm-output-4.png" width="85%" alt="PWM Output Waveform 4"> \</p>
+![PWM Output 4](images/pwm-output-4.png)
 
 **PWM Output 5**
 
-\<p align="center">
-&#x20; \<img src="images/pwm-output-5.png" width="85%" alt="PWM Output Waveform 5">
-\</p>
+![PWM Output 5](images/pwm-output-5.png)
 
 **PWM Output 6**
 
-\<p align="center">   \<img src="images/pwm-output-6.png" width="85%" alt="PWM Output Waveform 6"> \</p>
-
+![PWM Output 6](images/pwm-output-6.png)
 
 ## Concepts Demonstrated
 
