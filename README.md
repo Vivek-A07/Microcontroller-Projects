@@ -23,7 +23,6 @@ interfacing, and control logic.
 | 💡 Multi-Mode LED Controller | Controls an LED through multiple operating modes | GPIO, state machine, timing |
 | 🎚️ PWM LED Brightness Control | Controls LED brightness using PWM | PWM, timers, duty cycle |
 | 🌡️ Temperature Monitoring System | Monitors temperature and indicates ranges using LEDs | ADC, sensor interfacing |
-| ⏱️ User Inactivity Detector | Detects inactivity through input and timing logic | GPIO, timers, event detection |
 
 ## 📂 Repository Structure
 
@@ -33,7 +32,6 @@ Microcontroller-Projects/
 ├── Multi-Mode-LED-Controller/
 ├── PWM-LED-Brightness-Control/
 ├── Temperature-Monitoring-System/
-├── User-Inactivity-Detector/
 └── README.md
 \`\`\`
 
