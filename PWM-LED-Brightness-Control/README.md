@@ -142,7 +142,7 @@ The Capture/Compare Register (CCR) is updated according to the selected brightne
 ### PWM Output Waveforms
 
 <p align="center">
-  <b>10% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>0% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <b>20% Brightness</b><br>
   <img src="images/pwm-output-1.png" width="45%">
   <img src="images/pwm-output-2.png" width="45%">
@@ -151,8 +151,8 @@ The Capture/Compare Register (CCR) is updated according to the selected brightne
 <br>
 
 <p align="center">
-  <b>30% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>40% Brightness</b><br>
+  <b>40% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>60% Brightness</b><br>
   <img src="images/pwm-output-3.png" width="45%">
   <img src="images/pwm-output-4.png" width="45%">
 </p>
@@ -160,8 +160,8 @@ The Capture/Compare Register (CCR) is updated according to the selected brightne
 <br>
 
 <p align="center">
-  <b>50% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>60% Brightness</b><br>
+  <b>80% Brightness</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>100% Brightness</b><br>
   <img src="images/pwm-output-5.png" width="45%">
   <img src="images/pwm-output-6.png" width="45%">
 </p>
