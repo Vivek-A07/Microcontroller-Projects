@@ -128,6 +128,19 @@ The following waveform captures demonstrate PWM output behavior at different bri
 
 ![PWM Output 6](images/pwm-output-6.png)
 
+
+<p align="center">
+  <img src="images/pwm-output-1.png" width="45%" alt="Mode 0 LED OFF">
+  <img src="images/pwm-output-1.png" width="45%" alt="Mode 1 LED ON">
+</p>
+
+<p align="center">
+  <img src="images/pwm-output-1.png" width="45%" alt="Mode 2 Slow Blink">
+  <img src="images/pwm-output-1.png" width="45%" alt="Mode 3 Fast Blink">
+</p>
+
+pwm-output-1.png
+
 ## Concepts Demonstrated
 
 - Embedded C programming
