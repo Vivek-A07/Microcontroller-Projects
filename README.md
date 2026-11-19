@@ -26,6 +26,7 @@ interfacing, and control logic.
 
 ## 📂 Repository Structure
 
+```text
 Microcontroller-Projects/
 │
 ├── Binary-Counter-Display/
@@ -34,6 +35,7 @@ Microcontroller-Projects/
 ├── Temperature-Monitoring-System/
 │
 └── README.md
+```
 
 ## 🎯 Focus Areas
 
