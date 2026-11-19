@@ -26,14 +26,14 @@ interfacing, and control logic.
 
 ## 📂 Repository Structure
 
-\`\`\`
 Microcontroller-Projects/
+│
 ├── Binary-Counter-Display/
 ├── Multi-Mode-LED-Controller/
 ├── PWM-LED-Brightness-Control/
 ├── Temperature-Monitoring-System/
+│
 └── README.md
-\`\`\`
 
 ## 🎯 Focus Areas
 
