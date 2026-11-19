@@ -2,24 +2,24 @@
 
 **Level:** Beginner | **Platform:** STM32 Blue Pill
 
-A PWM-based LED brightness controller implemented using the STM32F103C8T6 microcontroller. LED brightness is adjusted in 10% increments through push-button input, using timer-based PWM signal generation.
+A PWM-based LED brightness controller implemented using the STM32F103C8T6 microcontroller. LED brightness is adjusted in 20% increments through push-button input, using timer-based PWM signal generation.
 
 ## What This Project Does
 
 - Starts with the LED at 0% brightness (OFF).
-- Increases brightness by 10% with each valid button press.
+- Increases brightness by 20% with each valid button press.
 - Supports brightness levels from 0% to 100%.
 - Automatically resets brightness to 0% after reaching 100%.
 - Generates PWM signals using Timer 2, Channel 1.
 - Controls LED brightness by adjusting the PWM duty cycle.
-- Implements button press detection and software debouncing.
+- Implements falling-edge button detection and software debouncing.
 
 ### Brightness Sequence
 
 ```text
-0% → 10% → 20% → 30% → 40% → 50%
- ↑                                ↓
-100% ← 90% ← 80% ← 70% ← 60%
+0% → 20% → 40% → 60% → 80% → 100%
+ ↑                                      |
+ └──────────── Next Press ──────────────┘
 ```
 
 ## Hardware / Components
@@ -42,15 +42,15 @@ A PWM-based LED brightness controller implemented using the STM32F103C8T6 microc
 ## Working Principle
 
 1. Initialize the STM32 GPIO and TIM2 peripherals.
-2. Configure TIM2 Channel 1 in PWM mode.
-3. Initialize the brightness level to 0%.
+2. Start TIM2 Channel 1 in PWM mode.
+3. Set the initial brightness to 0%.
 4. Continuously monitor the push button connected to PA1.
-5. Apply software debouncing to detect valid button presses.
-6. Increase the brightness level by 10% for each valid press.
-7. Calculate the corresponding PWM duty cycle.
-8. Update the timer compare register (`CCR`) to adjust the PWM output.
-9. Once the brightness reaches 100%, the next valid press resets it to 0%.
-10. Repeat the process continuously.
+5. Detect a falling-edge transition when the active-low button is pressed.
+6. Apply a 100 ms debounce lockout to prevent unwanted multiple increments.
+7. Increase brightness by 20% for each valid button press.
+8. Calculate the corresponding PWM pulse value.
+9. Update the Capture/Compare Register (CCR) to adjust the PWM duty cycle.
+10. After reaching 100%, the next valid button press resets brightness to 0%.
 
 ## Implementation Details
 
@@ -67,14 +67,50 @@ Timer 2, Channel 1 is configured to generate the PWM signal.
 | Auto-Reload Register (ARR)     | Determines PWM period         |
 | Capture/Compare Register (CCR) | Controls PWM duty cycle       |
 
+### PWM Initialization
+
+PWM generation is started before entering the infinite loop, with the initial duty cycle set to zero.
+
+```c
+HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
+```
+
 ### Brightness Control
 
-The brightness level is increased in 10% increments:
+The brightness level increases in 20% increments.
 
-```text
-0%, 10%, 20%, 30%, 40%,
-50%, 60%, 70%, 80%, 90%, 100%
+```c
+if (brightness >= 100)
+{
+    brightness = 0;
+}
+else
+{
+    brightness += 20;
+}
 ```
+
+### PWM Pulse Calculation
+
+The PWM pulse value is calculated based on the selected brightness level.
+
+```c
+uint32_t pulse = (brightness * 1000) / 100;
+
+__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, pulse);
+```
+
+With ARR = 999, the corresponding compare values are:
+
+| Brightness | CCR Value | LED Output             |
+| ---------: | --------: | ---------------------- |
+|         0% |         0 | OFF                    |
+|        20% |       200 | Low brightness         |
+|        40% |       400 | Medium-low brightness  |
+|        60% |       600 | Medium-high brightness |
+|        80% |       800 | High brightness        |
+|       100% |      1000 | Maximum brightness     |
 
 ### PWM Duty Cycle Calculation
 
@@ -84,49 +120,39 @@ The PWM duty cycle determines the percentage of time the output signal remains H
 Duty\ Cycle(%) = \frac{CCR}{ARR+1}\times100
 ]
 
-The compare register is updated according to the selected brightness level.
+The Capture/Compare Register (CCR) is updated according to the selected brightness level.
 
 ### Button Debouncing
 
-Software debouncing is implemented to prevent unwanted multiple brightness increments caused by mechanical button bouncing.
-
-## Images & Simulation Results
+- Push button is configured with an internal pull-up.
+- Button press is detected through a falling-edge transition.
+- `HAL_GetTick()` is used to measure elapsed time.
+- A 100 ms debounce lockout prevents unwanted multiple brightness increments.
 
 ## Images & Simulation Results
 
 ### STM32 Blue Pill Pin Configuration
 
-![STM32 Blue Pill Pin Configuration](images/pin-configuration.png)
 
----
 
 ### PWM Output Waveforms
 
-<p align="center">
-  <b>PWM Output 1</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>PWM Output 2</b><br>
-  <img src="images/pwm-output-1.png" width="45%" alt="PWM Output 1">
-  <img src="images/pwm-output-2.png" width="45%" alt="PWM Output 2">
-</p>
+The following oscilloscope captures demonstrate PWM output at different LED brightness levels.
 
-<br>
+\<p align="center">   \<b>0% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   \<b>20% Brightness\</b>\<br>   \<img src="images/pwm-output-1.png" width="45%" alt="0% Brightness PWM">   \<img src="images/pwm-output-2.png" width="45%" alt="20% Brightness PWM"> \</p>
 
-<p align="center">
-  <b>PWM Output 3</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>PWM Output 4</b><br>
-  <img src="images/pwm-output-3.png" width="45%" alt="PWM Output 3">
-  <img src="images/pwm-output-4.png" width="45%" alt="PWM Output 4">
-</p>
+\<br>
 
-<br>
+\<p align="center">   \<b>40% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   \<b>60% Brightness\</b>\<br>   \<img src="images/pwm-output-3.png" width="45%" alt="40% Brightness PWM">   \<img src="images/pwm-output-4.png" width="45%" alt="60% Brightness PWM"> \</p>
 
-<p align="center">
-  <b>PWM Output 5</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>PWM Output 6</b><br>
-  <img src="images/pwm-output-5.png" width="45%" alt="PWM Output 5">
-  <img src="images/pwm-output-6.png" width="45%" alt="PWM Output 6">
-</p>
+\<br>
 
+\<p align="center">
+&#x20; \<b>80% Brightness\</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&#x20; \<b>100% Brightness\</b>\<br>
+&#x20; \<img src="images/pwm-output-5.png" width="45%" alt="80% Brightness PWM">
+&#x20; \<img src="images/pwm-output-6.png" width="45%" alt="100% Brightness PWM">
+\</p>
 
 ## Concepts Demonstrated
 
@@ -139,24 +165,7 @@ Software debouncing is implemented to prevent unwanted multiple brightness incre
 - Capture/Compare Register (CCR)
 - Auto-Reload Register (ARR)
 - Push-button interfacing
+- Falling-edge detection
 - Software debouncing
 - HAL library
 - Hardware timer-based signal generation
-
-## Challenges & Solutions
-
-| Challenge                                            | Solution                                    |
-| ---------------------------------------------------- | ------------------------------------------- |
-| Generating a stable PWM signal                       | Configured TIM2 Channel 1 in PWM mode       |
-| Adjusting LED brightness                             | Modified the timer compare register (`CCR`) |
-| Converting brightness levels into PWM output         | Used duty-cycle calculation                 |
-| Preventing multiple increments from one button press | Implemented software debouncing             |
-| Handling brightness rollover                         | Reset brightness from 100% to 0%            |
-
-## Future Improvements
-
-- Implement ADC-based brightness control using a potentiometer.
-- Add smooth LED fading transitions.
-- Control multiple LEDs independently using different PWM channels.
-- Implement interrupt-based button handling.
-- Add UART-based brightness monitoring.
