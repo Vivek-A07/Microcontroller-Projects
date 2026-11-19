@@ -102,11 +102,9 @@ Software debouncing is implemented to prevent unwanted multiple brightness incre
 
 ### PWM Output Waveforms
 
-The following waveform captures demonstrate PWM output behavior at different brightness levels.
-
-### PWM Output Waveforms
-
 <p align="center">
+  <b>PWM Output 1</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>PWM Output 2</b><br>
   <img src="images/pwm-output-1.png" width="45%" alt="PWM Output 1">
   <img src="images/pwm-output-2.png" width="45%" alt="PWM Output 2">
 </p>
@@ -114,6 +112,8 @@ The following waveform captures demonstrate PWM output behavior at different bri
 <br>
 
 <p align="center">
+  <b>PWM Output 3</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>PWM Output 4</b><br>
   <img src="images/pwm-output-3.png" width="45%" alt="PWM Output 3">
   <img src="images/pwm-output-4.png" width="45%" alt="PWM Output 4">
 </p>
@@ -121,10 +121,11 @@ The following waveform captures demonstrate PWM output behavior at different bri
 <br>
 
 <p align="center">
+  <b>PWM Output 5</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>PWM Output 6</b><br>
   <img src="images/pwm-output-5.png" width="45%" alt="PWM Output 5">
   <img src="images/pwm-output-6.png" width="45%" alt="PWM Output 6">
 </p>
-
 ## Concepts Demonstrated
 
 - Embedded C programming
