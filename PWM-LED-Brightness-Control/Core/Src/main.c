@@ -103,7 +103,7 @@ int main(void)
   __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
 
   uint8_t prv_btn = GPIO_PIN_SET;
-  uint8_t brightness = 0;       // Ranges from 0 to 100 in steps of 20
+  uint8_t brightness = 0;        
   uint32_t last_press_time = 0;
   /* USER CODE END 2 */
 
@@ -116,7 +116,7 @@ int main(void)
       /* Detect falling edge: button pressed (Active-Low with Pull-Up) */
       if (button == GPIO_PIN_RESET && prv_btn == GPIO_PIN_SET)
       {
-          /* 150ms debounce lockout to prevent contact bounce from skipping states */
+          
           if ((HAL_GetTick() - last_press_time) > 100)
           {
               if (brightness >= 100)
