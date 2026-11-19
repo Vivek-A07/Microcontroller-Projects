@@ -126,6 +126,8 @@ Software debouncing is implemented to prevent unwanted multiple brightness incre
   <img src="images/pwm-output-5.png" width="45%" alt="PWM Output 5">
   <img src="images/pwm-output-6.png" width="45%" alt="PWM Output 6">
 </p>
+
+
 ## Concepts Demonstrated
 
 - Embedded C programming
